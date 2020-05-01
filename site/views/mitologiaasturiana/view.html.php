@@ -1,14 +1,9 @@
 <?php
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-class mitologiaasturianaViewmitologiaasturiana extends JViewLegacy
-{
+class mitologiaasturianaViewmitologiaasturiana extends JViewLegacy {
     
-    function display($tpl = null)
-    {
-        
-        //$this->items = $this->get('Items');
-        //Funciones::mostrarZona(__CLASS__,__METHOD__,$this->items ,1);
+    function display($tpl = null) {
         
         if (count($errors = $this->get('Errors')))
         {
