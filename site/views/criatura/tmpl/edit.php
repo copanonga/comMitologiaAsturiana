@@ -62,7 +62,7 @@ defined('_JEXEC') or die;
             
             <div class="card-body">
                 
-                <h4 class="card-title" style="text-transform: none"><?php echo JText::_('COM_MA_MITOLOGIAASTURIANA_CRIATURA');?></h4>
+                <h4 class="card-title" style="text-transform: none"><?php echo JText::_('COM_MITOLOGIAASTURIANA_CRIATURA');?></h4>
 
                 <div class="row">
 
