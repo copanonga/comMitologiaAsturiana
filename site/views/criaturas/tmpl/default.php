@@ -74,19 +74,19 @@ $canDo      = JHelperContent::getActions('com_mitologiaasturiana');
                             <tr>
 
                                 <th width="4%" class="bg-secondary text-white border border-white text-center">
-                                    <?php echo JText::_( 'COM_MA_MITOLOGIAASTURIANA_ESTADO' ) ?>
+                                    <?php echo JText::_( 'COM_MITOLOGIAASTURIANA_ESTADO' ) ?>
                                 </th>
 
                                 <th class="bg-secondary text-white border border-white">
-                                    <?php echo JText::_( 'COM_MA_MITOLOGIAASTURIANA_CRIATURA' ) ?>
+                                     <?php echo JText::_( 'COM_MITOLOGIAASTURIANA_CRIATURA' ) ?>
                                 </th>
 
                                 <th class="bg-secondary text-white border border-white">
-                                    <?php echo JText::_('COM_MA_MITOLOGIAASTURIANA_DESCRIPCION'); ?>
+                                    <?php echo JText::_('COM_MITOLOGIAASTURIANA_DESCRIPCION'); ?>
                                 </th>
                                 
                                 <th class="bg-secondary text-white border border-white">
-                                    <?php echo JText::_('COM_MA_MITOLOGIAASTURIANA_ANOTACIONES'); ?>
+                                    <?php echo JText::_('COM_MITOLOGIAASTURIANA_ANOTACIONES'); ?>
                                 </th>								
 
                             </tr>
@@ -114,7 +114,18 @@ $canDo      = JHelperContent::getActions('com_mitologiaasturiana');
                                         </td>
                                         
                                         <td>
-                                            <?php echo $item->criatura ?>
+                                            <?php if ($canDo->get('core.edit')) { 
+                                                
+                                                    echo '<a 
+                                                    href="' . JRoute::_('index.php?option=com_mitologiaasturiana&view=criatura&layout=edit&id=' . (int) $item->id) . '" 
+                                                    title="' . JText::_('COM_MITOLOGIAASTURIANA_EDITAR_CRIATURA') . '">' . 
+                                                    $item->criatura . 
+                                                    '</a>'; 
+
+                                                } else { 
+                                            
+                                                    echo $item->criatura; }
+                                            ?>
                                         </td>									
                                         
                                         <td>

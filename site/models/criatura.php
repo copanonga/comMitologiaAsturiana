@@ -39,6 +39,13 @@ class mitologiaasturianaModelcriatura extends JModelAdmin {
         
     }
 
+    /**
+     * 
+     * Guardamos los datos del formulario. Se pueden modificar y hacer otro
+     * tipo de consultas para guardar más datos.
+     * 
+     * @param type $table
+     */
     protected function prepareTable($table) {
         
         $config = JFactory::getConfig(); 
@@ -48,8 +55,18 @@ class mitologiaasturianaModelcriatura extends JModelAdmin {
         $fecha  = JFactory::getDate('now', $offset);
 
         $table->fecha_modificacion = $fecha->toSql($local = 'true');
-        $table->anotaciones = "Texto de anotaciones";
+        
+        //Modificamos el campo anotaciones independientemente de lo que se escriba en el formulario
+        //$table->anotaciones = "Texto de anotaciones";
 
+    }
+    
+    public function delete($id) {
+        
+        //Faltaría el código para borrar el elemento
+        
+        return JText::_('COM_MITOLOGIAASTURIANA_BORRAR') . ": " . $id;
+        
     }
 
 }
